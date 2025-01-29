@@ -14,5 +14,3 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - generate_vm_pages.py
-
