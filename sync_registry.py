@@ -37,7 +37,7 @@ created_at: {box['created_at']}
 updated_at: {box['updated_at']}
 versions_count: {box['summary']['versions_count']}
 provider_names: "{', '.join(box['summary']['provider_names'])}"
-latest_released_at: "{box['summary']['latest_released_at']}"
+latest_released_at: {box['summary']['latest_released_at']}
 state: "{box['state']}"
 description_html: '{box['description_html']}'
 versions: "{box['versions']}"
