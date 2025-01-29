@@ -6,9 +6,24 @@ layout: default
   <div class="row">
     <div class="col-md-6">
       <h1>{{ page.name }}</h1>
+      {{ page.description | markdownify }}
       <ul class="list-unstyled">
-        <li><strong>Description:</strong> {{ page.description | markdownify }}</li>
-        <li><strong>Downloads:</strong> {{ page.downloads }}</li>
+        <li class="d-flex justify-content-between">
+          <strong>Downloads:</strong>
+          <span>{{ page.downloads }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Created:</strong>
+          <span>{{ page.created_at }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Latest release:</strong>
+          <span>{{ page.latest_released_at }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Version available:</strong>
+          <span>{{ page.versions_count }}</span>
+        </li>
         <!-- Add more specs as needed -->
       </ul>
       <button id="open-utm-btn" class="btn btn-primary">Open in UTM</button>
