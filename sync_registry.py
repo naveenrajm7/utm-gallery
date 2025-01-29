@@ -18,7 +18,7 @@ def create_markdown_file(box):
 layout: vm
 name: "{box['name']}"
 downloads: {box['downloads']}
-description: '{box['description'].replace('\n', '\\n')}'
+description: '{box['description']}'
 short_description: "{box['short_description']}"
 is_private: {box['is_private']}
 created_at: {box['created_at']}
@@ -27,7 +27,7 @@ versions_count: {box['summary']['versions_count']}
 provider_names: "{', '.join(box['summary']['provider_names'])}"
 latest_released_at: "{box['summary']['latest_released_at']}"
 state: "{box['state']}"
-description_html: '{box['description_html'].replace('\n', '\\n')}'
+description_html: '{box['description_html']}'
 versions: "{box['versions']}"
 ---
 """
