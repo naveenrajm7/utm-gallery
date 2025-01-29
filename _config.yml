@@ -1,0 +1,18 @@
+# url: "https://naveenrajm7.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "/utm-gallery" # the subpath of your site, e.g. /blog
+title: "UTM Gallery" # the name of your site, e.g. ACME Corp.
+
+
+# vm collections
+collections:
+  vms:
+    output: true # true to generate collection pages
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - generate_vm_pages.py
+

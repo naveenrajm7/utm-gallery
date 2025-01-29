@@ -1,0 +1,141 @@
+{
+  "boxes": [
+      {
+          "name": "bookworm",
+          "description": "Debian 12 Generic Cloud Image. \nBuilt using Packer UTM-cloud builder",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-12-21T12:44:32.879629Z",
+          "updated_at": "2024-12-21T12:44:33.045271Z",
+          "summary": {
+              "versions_count": "3",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2025-01-20T09:58:36.633990Z"
+          },
+          "downloads": "91",
+          "state": "AVAILABLE",
+          "description_html": "<p>Debian 12 Generic Cloud Image.<br/>\nBuilt using Packer UTM-cloud builder</p>\n",
+          "versions": []
+      },
+      {
+          "name": "debian11",
+          "description": "Get Debian 11 on UTM with Vagrant UTM plugin\nhttps://naveenrajm7.github.io/vagrant_utm/\n",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-10-13T06:32:32.775033Z",
+          "updated_at": "2024-10-14T03:09:40.541143Z",
+          "summary": {
+              "versions_count": "1",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2024-10-13T06:33:08.111982Z"
+          },
+          "downloads": "51",
+          "state": "AVAILABLE",
+          "description_html": "<p>Get Debian 11 on UTM with Vagrant UTM plugin<br/>\n<a href=\"https://naveenrajm7.github.io/vagrant_utm/\" rel=\"nofollow\">https://naveenrajm7.github.io/vagrant_utm/</a></p>\n",
+          "versions": []
+      },
+      {
+          "name": "fedora41-ce",
+          "description": "Fedora 41 Cloud Edition\nBuilt using Packer UTM Plugin",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-12-22T11:42:51.971570Z",
+          "updated_at": "2024-12-22T11:42:52.132415Z",
+          "summary": {
+              "versions_count": "1",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2024-12-22T11:43:12.220980Z"
+          },
+          "downloads": "3",
+          "state": "AVAILABLE",
+          "description_html": "<p>Fedora 41 Cloud Edition<br/>\nBuilt using Packer UTM Plugin</p>\n",
+          "versions": []
+      },
+      {
+          "name": "noble",
+          "description": "Noble Numbat Cloud Image.  \nBuilt using UTM Packer plugin",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-12-22T12:23:36.427921Z",
+          "updated_at": "2024-12-22T12:26:27.435594Z",
+          "summary": {
+              "versions_count": "1",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2024-12-22T12:23:54.151126Z"
+          },
+          "downloads": "2",
+          "state": "AVAILABLE",
+          "description_html": "<p>Noble Numbat Cloud Image.<br/>\nBuilt using UTM Packer plugin</p>\n",
+          "versions": []
+      },
+      {
+          "name": "openbsd-7.6",
+          "description": "OpenBSD 7.6 default install UTM box compatible with Vagrant.\nBuild using packer, with the recipe at https://github.com/naveenrajm7/utm-box.\nSee Vagrantfile to use https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile.",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-12-20T12:00:48.067888Z",
+          "updated_at": "2024-12-21T12:40:01.811720Z",
+          "summary": {
+              "versions_count": "1",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2024-12-20T12:01:06.159880Z"
+          },
+          "downloads": "0",
+          "state": "AVAILABLE",
+          "description_html": "<p>OpenBSD 7.6 default install UTM box compatible with Vagrant.<br/>\nBuild using packer, with the recipe at <a href=\"https://github.com/naveenrajm7/utm-box\" rel=\"nofollow\">https://github.com/naveenrajm7/utm-box</a>.<br/>\nSee Vagrantfile to use <a href=\"https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile\" rel=\"nofollow\">https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile</a>.</p>\n",
+          "versions": []
+      },
+      {
+          "name": "ubuntu-24.04",
+          "description": "",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-11-30T05:38:04.715010Z",
+          "updated_at": "2024-11-30T05:38:04.936395Z",
+          "summary": {
+              "versions_count": "2",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2024-12-01T03:31:29.060477Z"
+          },
+          "downloads": "95",
+          "state": "AVAILABLE",
+          "description_html": "",
+          "versions": []
+      },
+      {
+          "name": "windows-11",
+          "description": "Microsoft Windows 11 for UTM.\nBuilt with [Packer](https://github.com/naveenrajm7/packer-plugin-utm)\nUsing template from [Bento](https://github.com/naveenrajm7/utm-box)",
+          "short_description": "",
+          "is_private": false,
+          "created_at": "2024-12-29T05:25:01.994510Z",
+          "updated_at": "2024-12-29T05:25:02.179430Z",
+          "summary": {
+              "versions_count": "1",
+              "provider_names": [
+                  "utm"
+              ],
+              "latest_released_at": "2024-12-29T05:29:30.253119Z"
+          },
+          "downloads": "19",
+          "state": "AVAILABLE",
+          "description_html": "<p>Microsoft Windows 11 for UTM.<br/>\nBuilt with <a href=\"https://github.com/naveenrajm7/packer-plugin-utm\" rel=\"nofollow\">Packer</a><br/>\nUsing template from <a href=\"https://github.com/naveenrajm7/utm-box\" rel=\"nofollow\">Bento</a></p>\n",
+          "versions": []
+      }
+  ],
+  "pagination": {
+      "next_page_token": "",
+      "previous_page_token": ""
+  }
+}
