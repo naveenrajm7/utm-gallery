@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
   <style>
     html, body {
       height: 100%;
@@ -26,6 +26,6 @@
 
   <!-- Footer -->
   {% include footer.html %}
-  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
 </body>
 </html>

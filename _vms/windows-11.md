@@ -20,6 +20,6 @@ Using template from <a href="https://github.com/naveenrajm7/utm-box" rel="nofoll
 '
 versions: "[]"
 # Custom data
-image_url: "/assets/images/windows-11.png"
-icon_url: "/assets/images/icons/windows.png"
+image_url: "assets/images/windows-11.png"
+icon_url: "assets/images/icons/windows.png"
 ---

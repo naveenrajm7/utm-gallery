@@ -42,8 +42,8 @@ state: "{box['state']}"
 description_html: '{box['description_html']}'
 versions: "{box['versions']}"
 # Custom data
-image_url: "/assets/images/{box['name']}.png"
-icon_url: "/assets/images/icons/{icon_name}.png"
+image_url: "assets/images/{box['name']}.png"
+icon_url: "assets/images/icons/{icon_name}.png"
 ---
 """
     os.makedirs(os.path.dirname(filename), exist_ok=True)

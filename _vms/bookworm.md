@@ -18,6 +18,6 @@ Built using Packer UTM-cloud builder</p>
 '
 versions: "[]"
 # Custom data
-image_url: "/assets/images/bookworm.png"
-icon_url: "/assets/images/icons/debian.png"
+image_url: "assets/images/bookworm.png"
+icon_url: "assets/images/icons/debian.png"
 ---

@@ -32,7 +32,7 @@ layout: default
         <div class="input-group">
           <input type="text" class="form-control" id="command-input" value="bash <(curl https://getvm.sh) {{ page.name }} {{ page.version }} {{ page.arch }}" readonly>
           <button class="btn btn-outline-secondary" type="button" id="copy-btn">
-            Copy  <img src="/assets/icons/copy.svg" alt="Copy Icon" class="icon" id="copy-icon">
+            Copy  <img src="{{ '/assets/icons/copy.svg' | relative_url }}" alt="Copy Icon" class="icon" id="copy-icon">
           </button>
         </div>
         <div id="copy-alert" class="alert alert-success mt-2" style="display: none;">
@@ -41,7 +41,7 @@ layout: default
       </div>
     </div>
     <div class="col-md-6">
-      <img src="{{ page.image_url }}" alt="{{ page.name }} VM Image" class="img-fluid">
+      <img src="{{ page.image_url | relative_url  }}" alt="{{ page.name }} VM Image" class="img-fluid">
     </div>
   </div>
   <a href="{{ '/' | relative_url }}" class="btn btn-secondary mt-4">Back to Gallery</a>
@@ -56,15 +56,18 @@ layout: default
     commandInput.select();
     document.execCommand('copy');
 
+    var copyIconUrl = '{{ "/assets/icons/copy.svg" | relative_url }}';
+    var checkIconUrl = '{{ "/assets/icons/check.svg" | relative_url }}';
+
     const copyIcon = document.getElementById('copy-icon');
-    copyIcon.src = '/assets/icons/check.svg';
+    copyIcon.src = checkIconUrl;
     copyIcon.style.color = 'green';
 
     const copyAlert = document.getElementById('copy-alert');
     copyAlert.style.display = 'block';
 
     setTimeout(() => {
-      copyIcon.src = '/assets/icons/copy.svg';
+      copyIcon.src = copyIconUrl;
       copyIcon.style.color = '';
       copyAlert.style.display = 'none';
     }, 2000);

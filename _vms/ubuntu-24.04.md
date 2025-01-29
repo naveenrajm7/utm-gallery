@@ -15,6 +15,6 @@ state: "AVAILABLE"
 description_html: ''
 versions: "[]"
 # Custom data
-image_url: "/assets/images/ubuntu-24.04.png"
-icon_url: "/assets/images/icons/ubuntu.png"
+image_url: "assets/images/ubuntu-24.04.png"
+icon_url: "assets/images/icons/ubuntu.png"
 ---

@@ -18,6 +18,6 @@ Built using UTM Packer plugin</p>
 '
 versions: "[]"
 # Custom data
-image_url: "/assets/images/noble.png"
-icon_url: "/assets/images/icons/ubuntu.png"
+image_url: "assets/images/noble.png"
+icon_url: "assets/images/icons/ubuntu.png"
 ---

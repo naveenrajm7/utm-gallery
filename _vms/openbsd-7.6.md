@@ -20,6 +20,6 @@ See Vagrantfile to use <a href="https://github.com/naveenrajm7/utm-box/blob/main
 '
 versions: "[]"
 # Custom data
-image_url: "/assets/images/openbsd-7.6.png"
-icon_url: "/assets/images/icons/openbsd.png"
+image_url: "assets/images/openbsd-7.6.png"
+icon_url: "assets/images/icons/openbsd.png"
 ---

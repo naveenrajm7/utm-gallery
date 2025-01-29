@@ -18,6 +18,6 @@ Built using Packer UTM Plugin</p>
 '
 versions: "[]"
 # Custom data
-image_url: "/assets/images/fedora41-ce.png"
-icon_url: "/assets/images/icons/fedora.png"
+image_url: "assets/images/fedora41-ce.png"
+icon_url: "assets/images/icons/fedora.png"
 ---

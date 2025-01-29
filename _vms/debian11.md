@@ -19,6 +19,6 @@ description_html: '<p>Get Debian 11 on UTM with Vagrant UTM plugin<br/>
 '
 versions: "[]"
 # Custom data
-image_url: "/assets/images/debian11.png"
-icon_url: "/assets/images/icons/debian.png"
+image_url: "assets/images/debian11.png"
+icon_url: "assets/images/icons/debian.png"
 ---
