@@ -1,5 +1,5 @@
-# url: "https://naveenrajm7.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# baseurl: "/utm-gallery" # the subpath of your site, e.g. /blog
+url: "https://naveenrajm7.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/utm-gallery" # the subpath of your site, e.g. /blog
 title: "UTM Gallery" # the name of your site, e.g. ACME Corp.
 
 
