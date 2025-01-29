@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "openbsd-7.6"
 downloads: 0
 description: 'OpenBSD 7.6 default install UTM box compatible with Vagrant.
@@ -18,4 +19,7 @@ Build using packer, with the recipe at <a href="https://github.com/naveenrajm7/u
 See Vagrantfile to use <a href="https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile" rel="nofollow">https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile</a>.</p>
 '
 versions: "[]"
+# Custom data
+image_url: "/assets/images/openbsd-7.6.png"
+icon_url: "/assets/images/icons/openbsd.png"
 ---

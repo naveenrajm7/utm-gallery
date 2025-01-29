@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "windows-11"
 downloads: 19
 description: 'Microsoft Windows 11 for UTM.
@@ -18,4 +19,7 @@ Built with <a href="https://github.com/naveenrajm7/packer-plugin-utm" rel="nofol
 Using template from <a href="https://github.com/naveenrajm7/utm-box" rel="nofollow">Bento</a></p>
 '
 versions: "[]"
+# Custom data
+image_url: "/assets/images/windows-11.png"
+icon_url: "/assets/images/icons/windows.png"
 ---

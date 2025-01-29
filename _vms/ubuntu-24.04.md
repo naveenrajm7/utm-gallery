@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "ubuntu-24.04"
 downloads: 95
 description: ''
@@ -13,4 +14,7 @@ latest_released_at: "2024-12-01T03:31:29.060477Z"
 state: "AVAILABLE"
 description_html: ''
 versions: "[]"
+# Custom data
+image_url: "/assets/images/ubuntu-24.04.png"
+icon_url: "/assets/images/icons/ubuntu.png"
 ---

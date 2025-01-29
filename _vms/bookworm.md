@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "bookworm"
 downloads: 91
 description: 'Debian 12 Generic Cloud Image. 
@@ -16,4 +17,7 @@ description_html: '<p>Debian 12 Generic Cloud Image.<br/>
 Built using Packer UTM-cloud builder</p>
 '
 versions: "[]"
+# Custom data
+image_url: "/assets/images/bookworm.png"
+icon_url: "/assets/images/icons/debian.png"
 ---

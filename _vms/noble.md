@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "noble"
 downloads: 2
 description: 'Noble Numbat Cloud Image.  
@@ -16,4 +17,7 @@ description_html: '<p>Noble Numbat Cloud Image.<br/>
 Built using UTM Packer plugin</p>
 '
 versions: "[]"
+# Custom data
+image_url: "/assets/images/noble.png"
+icon_url: "/assets/images/icons/ubuntu.png"
 ---

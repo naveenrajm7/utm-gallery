@@ -22,7 +22,7 @@ layout: default
       </div>
     </div>
     <div class="col-md-6">
-      <img src="{{ '/assets/images/' | append: page.name | append: '.png' | relative_url }}" alt="{{ page.name }} VM Image" class="img-fluid">
+      <img src="{{ page.image_url }}" alt="{{ page.name }} VM Image" class="img-fluid">
     </div>
   </div>
   <a href="{{ '/' | relative_url }}" class="btn btn-secondary mt-4">Back to Gallery</a>

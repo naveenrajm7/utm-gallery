@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "debian11"
 downloads: 53
 description: 'Get Debian 11 on UTM with Vagrant UTM plugin
@@ -17,4 +18,7 @@ description_html: '<p>Get Debian 11 on UTM with Vagrant UTM plugin<br/>
 <a href="https://naveenrajm7.github.io/vagrant_utm/" rel="nofollow">https://naveenrajm7.github.io/vagrant_utm/</a></p>
 '
 versions: "[]"
+# Custom data
+image_url: "/assets/images/debian11.png"
+icon_url: "/assets/images/icons/debian.png"
 ---

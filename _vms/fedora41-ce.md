@@ -1,5 +1,6 @@
 ---
 layout: vm
+# API response data
 name: "fedora41-ce"
 downloads: 3
 description: 'Fedora 41 Cloud Edition
@@ -16,4 +17,7 @@ description_html: '<p>Fedora 41 Cloud Edition<br/>
 Built using Packer UTM Plugin</p>
 '
 versions: "[]"
+# Custom data
+image_url: "/assets/images/fedora41-ce.png"
+icon_url: "/assets/images/icons/fedora.png"
 ---
