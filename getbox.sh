@@ -67,9 +67,31 @@ verify_checksum() {
     local checksum=$1
     local file=$2
     local checksum_type=$3
-    if [ "$checksum_type" != "NONE" ]; then
-        echo "$checksum  $file" | shasum -a "$checksum_type" -c -
+
+    if [ "$checksum_type" = "NONE" ]; then
+        log "Checksum verification skipped as checksum type is NONE"
+        return
     fi
+
+    case "$checksum_type" in
+      SHA1)
+          checksum_type=1
+          ;;
+      SHA256)
+          checksum_type=256
+          ;;
+      SHA384)
+          checksum_type=384
+          ;;          
+      SHA512)
+          checksum_type=512
+          ;;
+      *)
+          err "Unsupported checksum type: $checksum_type"
+          ;;
+    esac
+
+    echo "$checksum  $file" | shasum -a "$checksum_type" -c -
 }
 
 # Main script
@@ -128,7 +150,7 @@ main() {
     fi
 
     log "Importing the VM to UTM"
-    osascript -e "tell application \"UTM\" to import new virtual machine from POSIX file \"$PWD/$utm_folder\""
+    osascript -e "tell application \"UTM\" to import new virtual machine from POSIX file \"$utm_folder\""
 
     log "Cleaning up"
     rm "$box_file"
