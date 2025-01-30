@@ -6,7 +6,9 @@ layout: default
   <div class="row">
     <div class="col-md-6">
       <h1>{{ page.name }}</h1>
-      {{ page.description | markdownify }}
+      <div class="description">
+        {{ page.description | markdownify }}
+      </div>
       <ul class="list-unstyled">
         <li class="d-flex justify-content-between">
           <strong>Downloads:</strong>
@@ -14,23 +16,47 @@ layout: default
         </li>
         <li class="d-flex justify-content-between">
           <strong>Created:</strong>
-          <span>{{ page.created_at }}</span>
+          <span>{{ page.created_at | date: "%-d %B %Y" }}</span>
         </li>
         <li class="d-flex justify-content-between">
           <strong>Latest release:</strong>
-          <span>{{ page.latest_released_at }}</span>
+          <span>{{ page.latest_released_at | date: "%-d %B %Y" }}</span>
         </li>
         <li class="d-flex justify-content-between">
-          <strong>Version available:</strong>
+          <strong>Versions available:</strong>
           <span>{{ page.versions_count }}</span>
         </li>
         <!-- Add more specs as needed -->
+        <!-- Hardcoded specs, common for all packer build VMs -->
+        <li class="my-3"></li> <!-- Space between existing and new items -->
+        <li class="d-flex justify-content-between">
+          <strong>Memory:</strong>
+          <span>4096 MiB</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Disk:</strong>
+          <span>40 GiB</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Username:</strong>
+          <span>vagrant</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Password:</strong>
+          <span>vagrant</span>
+        </li> 
       </ul>
-      <button id="open-utm-btn" class="btn btn-primary">Open in UTM</button>
+      <a href="{{ '/' | relative_url }}" class="btn btn-secondary mt-4">Back to Gallery</a>
+    </div>
+    <div class="col-md-6">
+      <img src="{{ page.image_url | relative_url  }}" alt="{{ page.name }} VM Image" class="img-fluid">
+      <div class="d-flex justify-content-center">
+        <button id="open-utm-btn" class="btn btn-primary">Open in UTM</button>
+      </div>
       <div id="command-box" class="mt-3" style="display: none;">
         <p>Copy the command below, paste it into your terminal, and execute it:</p>
         <div class="input-group">
-          <input type="text" class="form-control" id="command-input" value="bash <(curl https://getvm.sh) {{ page.name }} {{ page.version }} {{ page.arch }}" readonly>
+          <input type="text" class="form-control" id="command-input" value="curl -sSf https://naveenrajm7.github.io/utm-gallery/getbox.sh | sh -s {{ page.name }} {{ page.version }} {{ page.arch }}" wrap="off" style="overflow:auto">
           <button class="btn btn-outline-secondary" type="button" id="copy-btn">
             Copy  <img src="{{ '/assets/icons/copy.svg' | relative_url }}" alt="Copy Icon" class="icon" id="copy-icon">
           </button>
@@ -40,12 +66,9 @@ layout: default
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <img src="{{ page.image_url | relative_url  }}" alt="{{ page.name }} VM Image" class="img-fluid">
-    </div>
   </div>
-  <a href="{{ '/' | relative_url }}" class="btn btn-secondary mt-4">Back to Gallery</a>
 </div>
+
 <script>
   document.getElementById('open-utm-btn').addEventListener('click', () => {
     document.getElementById('command-box').style.display = 'block';
