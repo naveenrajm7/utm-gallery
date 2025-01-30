@@ -2,7 +2,7 @@
 layout: vm
 # API response data
 name: "ubuntu-24.04"
-downloads: 95
+downloads: 96
 description: ''
 short_description: ""
 is_private: False

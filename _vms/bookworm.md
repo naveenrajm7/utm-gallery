@@ -2,7 +2,7 @@
 layout: vm
 # API response data
 name: "bookworm"
-downloads: 91
+downloads: 95
 description: 'Debian 12 Generic Cloud Image. 
 Built using Packer UTM-cloud builder'
 short_description: ""
