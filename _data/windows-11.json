@@ -1,6 +1,6 @@
 {
   "icon": "windows",
-  "display_name": "None",
-  "serial_port": true,
+  "display_name": "GPU Accelerated",
+  "serial_port": false,
   "packer_builder": "iso"
 }
