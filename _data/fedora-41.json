@@ -1,0 +1,6 @@
+{
+  "icon": "fedora",
+  "display_name": "virtio-gpu-pci",
+  "serial_port": true,
+  "packer_builder": "iso"
+}
