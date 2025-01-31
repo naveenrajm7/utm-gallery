@@ -20,7 +20,7 @@ Built using Packer UTM-cloud builder</p>
 '
 versions: "[]"
 # API Response : Box details
-size: "516.5216703414917"
+size: 516.5216703414917
 architectures: "arm64, amd64"
 # Hardcoded data
 image_url: "assets/images/bookworm.png"

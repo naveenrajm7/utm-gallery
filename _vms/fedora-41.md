@@ -18,7 +18,7 @@ description_html: '<p>Fedora-41 Server with GNOME</p>
 '
 versions: "[]"
 # API Response : Box details
-size: "1872.3897848129272"
+size: 1872.3897848129272
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/fedora-41.png"

@@ -22,7 +22,7 @@ See Vagrantfile to use <a href="https://github.com/naveenrajm7/utm-box/blob/main
 '
 versions: "[]"
 # API Response : Box details
-size: "589.6008195877075"
+size: 589.6008195877075
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/openbsd-7.6.png"

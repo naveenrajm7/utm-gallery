@@ -21,7 +21,7 @@ description_html: '<p>Get Debian 11 on UTM with Vagrant UTM plugin<br/>
 '
 versions: "[]"
 # API Response : Box details
-size: "928.4187545776367"
+size: 928.4187545776367
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/debian11.png"

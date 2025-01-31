@@ -20,7 +20,7 @@ Built using UTM Packer plugin</p>
 '
 versions: "[]"
 # API Response : Box details
-size: "539.1898002624512"
+size: 539.1898002624512
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/noble.png"

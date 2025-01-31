@@ -22,7 +22,7 @@ Using template from <a href="https://github.com/naveenrajm7/utm-box" rel="nofoll
 '
 versions: "[]"
 # API Response : Box details
-size: "5726.27116394043"
+size: 5726.27116394043
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/windows-11.png"

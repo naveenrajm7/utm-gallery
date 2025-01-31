@@ -20,7 +20,7 @@ Built using Packer UTM Plugin</p>
 '
 versions: "[]"
 # API Response : Box details
-size: "468.3529634475708"
+size: 468.3529634475708
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/fedora41-ce.png"

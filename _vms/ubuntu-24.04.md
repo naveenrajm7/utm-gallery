@@ -17,7 +17,7 @@ state: "AVAILABLE"
 description_html: ''
 versions: "[]"
 # API Response : Box details
-size: "2648.767566680908"
+size: 2648.767566680908
 architectures: "arm64"
 # Hardcoded data
 image_url: "assets/images/ubuntu-24.04.png"
