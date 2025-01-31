@@ -76,15 +76,18 @@ latest_released_at: {box['summary']['latest_released_at']}
 state: "{box['state']}"
 description_html: '{box['description_html']}'
 versions: "{box['versions']}"
+
 # API Response : Box details
 size: {box.get('size', 'N/A')}
 architectures: "{box.get('architectures', 'N/A')}"
 # Hardcoded data
 image_url: "assets/images/{box['name']}.png"
+
 # User data
 icon_url: "assets/images/icons/{box['icon']}.png"
 packer_builder: "{box.get('packer_builder', 'N/A')}"
-
+display_name: "{box.get('display_name', 'N/A')}"
+serial_port: {box.get('serial_port', 'N/A')}
 ---
 """
     os.makedirs(os.path.dirname(filename), exist_ok=True)

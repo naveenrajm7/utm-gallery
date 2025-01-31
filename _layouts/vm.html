@@ -36,9 +36,26 @@ layout: default
           <strong>Size:</strong>
           <span>{{ page.size | round: 2 }} MB</span>
         </li>
+        <li class="my-3"></li> <!-- Space between existing and new items -->
+
+
+        <!-- User provided data-->
+        <li class="d-flex justify-content-between">
+          <strong>Display:</strong>
+          <span>{{ page.display_name }}</span>
+        </li> 
+        <li class="d-flex justify-content-between">
+          <strong>Serial port:</strong>
+          <span>
+            {% if page.serial_port %}
+              Present
+            {% else %}
+              Absent
+          {% endif %}
+          </span>
+        </li> 
 
         <!-- Hardcoded specs, common for all packer build VMs -->
-        <li class="my-3"></li> <!-- Space between existing and new items -->
         <li class="d-flex justify-content-between">
           <strong>Memory:</strong>
           <span>4096 MiB</span>
