@@ -1,4 +1,6 @@
 ---
+### This file is auto-generated. Do not edit manually.
+### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
 name: "fedora41-ce"
@@ -17,7 +19,13 @@ description_html: '<p>Fedora 41 Cloud Edition<br/>
 Built using Packer UTM Plugin</p>
 '
 versions: "[]"
-# Custom data
+# API Response : Box details
+size: "468.3529634475708"
+architectures: "arm64"
+# Hardcoded data
 image_url: "assets/images/fedora41-ce.png"
+# User data
 icon_url: "assets/images/icons/fedora.png"
+packer_builder: "cloud"
+
 ---

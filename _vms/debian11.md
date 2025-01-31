@@ -1,8 +1,10 @@
 ---
+### This file is auto-generated. Do not edit manually.
+### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
 name: "debian11"
-downloads: 53
+downloads: 54
 description: 'Get Debian 11 on UTM with Vagrant UTM plugin
 https://naveenrajm7.github.io/vagrant_utm/
 '
@@ -18,7 +20,13 @@ description_html: '<p>Get Debian 11 on UTM with Vagrant UTM plugin<br/>
 <a href="https://naveenrajm7.github.io/vagrant_utm/" rel="nofollow">https://naveenrajm7.github.io/vagrant_utm/</a></p>
 '
 versions: "[]"
-# Custom data
+# API Response : Box details
+size: "928.4187545776367"
+architectures: "arm64"
+# Hardcoded data
 image_url: "assets/images/debian11.png"
+# User data
 icon_url: "assets/images/icons/debian.png"
+packer_builder: "utm"
+
 ---

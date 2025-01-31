@@ -1,4 +1,6 @@
 ---
+### This file is auto-generated. Do not edit manually.
+### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
 name: "noble"
@@ -17,7 +19,13 @@ description_html: '<p>Noble Numbat Cloud Image.<br/>
 Built using UTM Packer plugin</p>
 '
 versions: "[]"
-# Custom data
+# API Response : Box details
+size: "539.1898002624512"
+architectures: "arm64"
+# Hardcoded data
 image_url: "assets/images/noble.png"
+# User data
 icon_url: "assets/images/icons/ubuntu.png"
+packer_builder: "cloud"
+
 ---

@@ -1,4 +1,6 @@
 ---
+### This file is auto-generated. Do not edit manually.
+### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
 name: "openbsd-7.6"
@@ -19,7 +21,13 @@ Build using packer, with the recipe at <a href="https://github.com/naveenrajm7/u
 See Vagrantfile to use <a href="https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile" rel="nofollow">https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile</a>.</p>
 '
 versions: "[]"
-# Custom data
+# API Response : Box details
+size: "589.6008195877075"
+architectures: "arm64"
+# Hardcoded data
 image_url: "assets/images/openbsd-7.6.png"
+# User data
 icon_url: "assets/images/icons/openbsd.png"
+packer_builder: "iso"
+
 ---

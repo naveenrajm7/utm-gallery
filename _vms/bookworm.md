@@ -1,8 +1,10 @@
 ---
+### This file is auto-generated. Do not edit manually.
+### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
 name: "bookworm"
-downloads: 95
+downloads: 100
 description: 'Debian 12 Generic Cloud Image. 
 Built using Packer UTM-cloud builder'
 short_description: ""
@@ -17,7 +19,13 @@ description_html: '<p>Debian 12 Generic Cloud Image.<br/>
 Built using Packer UTM-cloud builder</p>
 '
 versions: "[]"
-# Custom data
+# API Response : Box details
+size: "516.5216703414917"
+architectures: "arm64, amd64"
+# Hardcoded data
 image_url: "assets/images/bookworm.png"
+# User data
 icon_url: "assets/images/icons/debian.png"
+packer_builder: "cloud"
+
 ---

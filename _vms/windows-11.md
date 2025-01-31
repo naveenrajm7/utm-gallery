@@ -1,4 +1,6 @@
 ---
+### This file is auto-generated. Do not edit manually.
+### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
 name: "windows-11"
@@ -19,7 +21,13 @@ Built with <a href="https://github.com/naveenrajm7/packer-plugin-utm" rel="nofol
 Using template from <a href="https://github.com/naveenrajm7/utm-box" rel="nofollow">Bento</a></p>
 '
 versions: "[]"
-# Custom data
+# API Response : Box details
+size: "5726.27116394043"
+architectures: "arm64"
+# Hardcoded data
 image_url: "assets/images/windows-11.png"
+# User data
 icon_url: "assets/images/icons/windows.png"
+packer_builder: "iso"
+
 ---
