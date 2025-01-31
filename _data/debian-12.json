@@ -1,0 +1,6 @@
+{
+  "icon": "debian",
+  "display_name": "GPU Accelerated",
+  "serial_port": true,
+  "packer_builder": "iso"
+}
