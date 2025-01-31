@@ -10,10 +10,15 @@ layout: default
         <div class="card h-100">
           <div class="card-body text-center">
             <h4 class="card-title">{{ vm.name }}</h4>
-            <p class="card-text">
-              <img src="assets/icons/download.svg" alt="Download Icon" class="icon"> Downloads: {{ vm.downloads }}
+            <p class="card-text d-flex justify-content-center align-items-center">
+              <img src="assets/icons/download.svg" alt="Download Icon" class="icon me-2"> Downloads: {{ vm.downloads }}
+              <span class="mx-3"></span>
+              <img src="assets/icons/hdd.svg" alt="HDD Icon" class="icon me-2"> Size: {{ vm.size | round: 2 }} MB
             </p>
             <img src="{{ vm.icon_url }}" alt="{{ vm.name }}" class="img-fluid mb-3">
+            <div class="mt-2">
+              <span class="badge rounded-pill text-bg-success">{{ vm.packer_builder }}</span>
+            </div>
           </div>
           <div class="card-footer text-center">
             <a href="{{ vm.url | relative_url }}" class="btn btn-primary">View Details</a>

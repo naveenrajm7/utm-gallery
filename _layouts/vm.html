@@ -26,7 +26,17 @@ layout: default
           <strong>Versions available:</strong>
           <span>{{ page.versions_count }}</span>
         </li>
-        <!-- Add more specs as needed -->
+
+        <!-- version specific -->
+        <li class="d-flex justify-content-between">
+          <strong>Architectures available:</strong>
+          <span>{{ page.architectures }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Size:</strong>
+          <span>{{ page.size | round: 2 }} MB</span>
+        </li>
+
         <!-- Hardcoded specs, common for all packer build VMs -->
         <li class="my-3"></li> <!-- Space between existing and new items -->
         <li class="d-flex justify-content-between">
