@@ -3,29 +3,29 @@
 ### To update this file , run `python3 sync_registry.py`
 layout: vm
 # API response data
-name: "fedora41-ce"
-downloads: 13
-description: 'Fedora 41 Cloud Edition'
+name: "alpine-ce"
+downloads: 0
+description: 'Alpine Linux Cloud box'
 short_description: ""
 is_private: False
-created_at: 2024-12-22T11:42:51.971570Z
-updated_at: 2025-01-31T22:48:33.736825Z
+created_at: 2025-04-19T04:00:40.240364Z
+updated_at: 2025-04-19T04:00:40.428257Z
 versions_count: 1
 provider_names: "utm"
-latest_released_at: 2024-12-22T11:43:12.220980Z
+latest_released_at: 2025-04-19T04:00:54.607292Z
 state: "AVAILABLE"
-description_html: '<p>Fedora 41 Cloud Edition</p>
+description_html: '<p>Alpine Linux Cloud box</p>
 '
 versions: "[]"
 
 # API Response : Box details
-size: 468.3529634475708
+size: 93.34365940093994
 architectures: "arm64"
 # Hardcoded data
-image_url: "assets/images/fedora41-ce.png"
+image_url: "assets/images/alpine-ce.png"
 
 # User data
-icon_url: "assets/images/icons/fedora.png"
+icon_url: "assets/images/icons/alpine.png"
 packer_builder: "cloud"
 display_name: "None"
 serial_port: True

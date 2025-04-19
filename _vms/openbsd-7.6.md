@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "openbsd-7.6"
-downloads: 5
+downloads: 17
 description: 'OpenBSD 7.6 with default install 
 See [BSD Vagrantfile](https://github.com/naveenrajm7/utm-box/blob/main/example_vagrantfiles/openbsd/Vagrantfile) to use with Vagrant.'
 short_description: ""

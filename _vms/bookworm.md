@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "bookworm"
-downloads: 117
+downloads: 396
 description: 'Debian 12 Generic Cloud Image. '
 short_description: ""
 is_private: False

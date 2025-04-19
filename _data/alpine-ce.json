@@ -1,0 +1,6 @@
+{
+    "icon": "alpine",
+    "display_name": "None",
+    "serial_port": true,
+    "packer_builder": "cloud"
+  }
