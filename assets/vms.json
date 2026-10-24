@@ -1,0 +1,27 @@
+---
+layout: null
+---
+{%- assign utm_vms = site.vms | where: "source", "utm" -%}
+{%- assign other_vms = site.vms | where_exp: "vm", "vm.source != 'utm'" -%}
+{%- assign vms = utm_vms | concat: other_vms -%}
+[
+{%- for vm in vms %}
+  {%- assign display_name = vm.display_name -%}
+  {%- if display_name == "None" -%}{%- assign display_name = nil -%}{%- endif -%}
+  {%- assign arch = vm.architectures | default: "" | split: "," -%}
+  {
+    "name": {{ vm.name | jsonify }},
+    "display_name": {{ display_name | jsonify }},
+    "description": {{ vm.description | jsonify }},
+    "source": {{ vm.source | default: "utm" | jsonify }},
+    "source_label": {{ vm.source_label | default: "UTM" | jsonify }},
+    "box_ref": {{ vm.box_ref | jsonify }},
+    "downloads": {{ vm.downloads | default: 0 | jsonify }},
+    "size_bytes": {{ vm.size | default: 0 | times: 1048576 | round | jsonify }},
+    "arch": [{% for a in arch %}{{ a | strip | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+    "packer_builder": {{ vm.packer_builder | jsonify }},
+    "icon_url": {{ vm.icon_url | relative_url | jsonify }},
+    "url": {{ vm.url | relative_url | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+]
