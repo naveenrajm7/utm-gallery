@@ -2,51 +2,104 @@
 layout: default
 ---
 
-<div class="container flex-grow-1">
+<style>
+  .gallery-toolbar .form-control,
+  .gallery-toolbar .form-select,
+  .gallery-toolbar .btn {
+    min-height: 44px;
+  }
+  .gallery-list-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .gallery-list .min-w-0 {
+    min-width: 0;
+  }
+</style>
+
+<div class="container flex-grow-1" id="gallery" data-vms-url="{{ '/assets/vms.json' | relative_url }}">
   <h1 class="my-4 text-center">UTM Virtual Machine Gallery</h1>
-  <div class="row">
-    {% assign utm_vms = site.vms | where: "source", "utm" %}
-    {% assign other_vms = site.vms | where_exp: "vm", "vm.source != 'utm'" %}
-    {% assign vms = utm_vms | concat: other_vms %}
-    {% for vm in vms %}
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <h4 class="card-title">{{ vm.name }}</h4>
-            <p class="card-text d-flex justify-content-center align-items-center">
-              <img src="assets/icons/download.svg" alt="Download Icon" class="icon me-2"> Downloads: {{ vm.downloads }}
-              <span class="mx-3"></span>
-              <img src="assets/icons/hdd.svg" alt="HDD Icon" class="icon me-2"> Size: {{ vm.size | round: 2 }} MB
-            </p>
-            <img src="{{ vm.icon_url }}" alt="{{ vm.name }}" class="img-fluid mb-3">
-            <div class="mt-2">
-              {% include source_badge.html vm=vm %}
-              {% if vm.packer_builder %}
-              <span class="badge rounded-pill text-bg-success">{{ vm.packer_builder }}</span>
-              {% endif %}
-            </div>
-          </div>
-          <div class="card-footer text-center">
-            <a href="{{ vm.url | relative_url }}" class="btn btn-primary">View Details</a>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-    <!-- Default card to request VM -->
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <div class="card-body text-center">
-          <h4 class="card-title">VM not found</h4>
-          <p class="card-text">
-            Did not find the VM you were looking for? <br>
-          </p>
-          <img src="" class="img-fluid mb-3">
-        </div>
-        <div class="card-footer text-center">     <a href="https://github.com/naveenrajm7/utm-box/issues/new?template=box-request.md" class="btn btn-primary">Request or Contribute</a>
-     
-        </div>
+
+  <form class="gallery-toolbar row g-2 align-items-center mb-3" id="gallery-toolbar" role="search" hidden onsubmit="return false">
+    <div class="col-12 col-lg">
+      <label for="gallery-search" class="visually-hidden">Search VMs</label>
+      <input type="search" class="form-control" id="gallery-search" placeholder="Search by name or description" autocomplete="off">
+    </div>
+    <div class="col-12 col-sm-auto">
+      <div class="btn-group w-100" role="group" aria-label="Filter by source">
+        <input type="checkbox" class="btn-check" id="gallery-source-utm" name="source" value="utm" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="gallery-source-utm">UTM</label>
+        <input type="checkbox" class="btn-check" id="gallery-source-bento" name="source" value="bento" autocomplete="off" checked>
+        <label class="btn btn-outline-warning" for="gallery-source-bento">Bento</label>
       </div>
     </div>
-    <!-- End of default card -->
+    <div class="col col-sm">
+      <label for="gallery-sort" class="visually-hidden">Sort by</label>
+      <select class="form-select" id="gallery-sort">
+        <option value="featured">Featured</option>
+        <option value="downloads-desc">Most downloads</option>
+        <option value="downloads-asc">Fewest downloads</option>
+        <option value="size-desc">Largest size</option>
+        <option value="size-asc">Smallest size</option>
+        <option value="name-asc">Name: A–Z</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <div class="btn-group" role="group" aria-label="View">
+        <input type="radio" class="btn-check" name="view" id="gallery-view-grid" value="grid" autocomplete="off" checked>
+        <label class="btn btn-outline-secondary" for="gallery-view-grid">Grid</label>
+        <input type="radio" class="btn-check" name="view" id="gallery-view-list" value="list" autocomplete="off">
+        <label class="btn btn-outline-secondary" for="gallery-view-list">List</label>
+      </div>
+    </div>
+    <div class="col-12">
+      <p class="small text-body-secondary mb-0" id="gallery-count" aria-live="polite"></p>
+    </div>
+  </form>
+
+  <div id="gallery-results">
+    <div class="row">
+      {% assign utm_vms = site.vms | where: "source", "utm" %}
+      {% assign other_vms = site.vms | where_exp: "vm", "vm.source != 'utm'" %}
+      {% assign vms = utm_vms | concat: other_vms %}
+      {% for vm in vms %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h4 class="card-title">{{ vm.name }}</h4>
+              <p class="card-text d-flex justify-content-center align-items-center">
+                <img src="assets/icons/download.svg" alt="Download Icon" class="icon me-2"> Downloads: {{ vm.downloads }}
+                <span class="mx-3"></span>
+                <img src="assets/icons/hdd.svg" alt="HDD Icon" class="icon me-2"> Size: {{ vm.size | round: 2 }} MB
+              </p>
+              <img src="{{ vm.icon_url }}" alt="{{ vm.name }}" class="img-fluid mb-3">
+              <div class="mt-2">
+                {% include source_badge.html vm=vm %}
+                {% if vm.packer_builder %}
+                <span class="badge rounded-pill text-bg-success">{{ vm.packer_builder }}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <a href="{{ vm.url | relative_url }}" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="col-lg-4 col-md-6 mb-4">
+        {% include request_card.html %}
+      </div>
+    </div>
   </div>
+
+  <nav aria-label="Gallery pages" id="gallery-pagination" class="mb-4" hidden>
+    <ul class="pagination justify-content-center flex-wrap"></ul>
+  </nav>
 </div>
+
+<template id="gallery-request-card">
+  {% include request_card.html %}
+</template>
+
+<script src="{{ '/assets/js/gallery.js' | relative_url }}" defer></script>
