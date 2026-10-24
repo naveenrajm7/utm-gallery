@@ -5,7 +5,10 @@ layout: default
 <div class="container flex-grow-1">
   <h1 class="my-4 text-center">UTM Virtual Machine Gallery</h1>
   <div class="row">
-    {% for vm in site.vms %}
+    {% assign utm_vms = site.vms | where: "source", "utm" %}
+    {% assign other_vms = site.vms | where_exp: "vm", "vm.source != 'utm'" %}
+    {% assign vms = utm_vms | concat: other_vms %}
+    {% for vm in vms %}
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
           <div class="card-body text-center">
@@ -17,7 +20,10 @@ layout: default
             </p>
             <img src="{{ vm.icon_url }}" alt="{{ vm.name }}" class="img-fluid mb-3">
             <div class="mt-2">
+              {% include source_badge.html vm=vm %}
+              {% if vm.packer_builder %}
               <span class="badge rounded-pill text-bg-success">{{ vm.packer_builder }}</span>
+              {% endif %}
             </div>
           </div>
           <div class="card-footer text-center">

@@ -4,29 +4,37 @@
 layout: vm
 # API response data
 name: "noble"
-downloads: 18
-description: 'Ubuntu 24.04 (Noble Numbat) Server Cloud Image.  '
+downloads: 325
+description: "Ubuntu 24.04 (Noble Numbat) Server Cloud Image.  "
 short_description: ""
-is_private: False
+is_private: false
 created_at: 2024-12-22T12:23:36.427921Z
 updated_at: 2025-01-31T22:49:26.691060Z
 versions_count: 1
 provider_names: "utm"
 latest_released_at: 2024-12-22T12:23:54.151126Z
 state: "AVAILABLE"
-description_html: '<p>Ubuntu 24.04 (Noble Numbat) Server Cloud Image.</p>
-'
+description_html: "<p>Ubuntu 24.04 (Noble Numbat) Server Cloud Image.</p>\n"
 versions: "[]"
 
 # API Response : Box details
+latest_version: "0.0.0"
 size: 539.1898002624512
 architectures: "arm64"
+download_arch: "arm64"
+
+# Source registry
+source: "utm"
+source_label: "UTM"
+registry_org: "utm"
+box_ref: "utm/noble"
+
 # Hardcoded data
 image_url: "assets/images/noble.png"
 
-# User data
+# User data (null when no _data file exists)
 icon_url: "assets/images/icons/ubuntu.png"
 packer_builder: "cloud"
 display_name: "None"
-serial_port: True
+serial_port: true
 ---

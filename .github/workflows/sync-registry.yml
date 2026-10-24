@@ -1,0 +1,72 @@
+# Nightly sync of HCP Vagrant Registry data (utm + bento orgs) into _vms/.
+#
+# Commits pushed with GITHUB_TOKEN do not trigger other workflows, so the
+# `push` trigger of jekyll.yml never fires for the sync commit. Instead this
+# workflow calls jekyll.yml (via workflow_call) for the pushed commit whenever
+# the sync produced changes.
+name: Sync Vagrant Registry
+
+on:
+  schedule:
+    - cron: "0 2 * * *" # 02:00 UTC nightly
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: registry-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Sync registry
+        run: python3 sync_registry.py
+
+      - name: Commit and push changes
+        id: commit
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git add -A _vms _data
+          if git diff --cached --quiet; then
+            echo "No registry changes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "registry sync $(date -u +%Y-%m-%d)"
+          # Rebase in case the branch moved while the sync was running.
+          git pull --rebase origin "$DEFAULT_BRANCH"
+          git push origin "HEAD:$DEFAULT_BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/jekyll.yml
+    with:
+      ref: ${{ needs.sync.outputs.sha }}

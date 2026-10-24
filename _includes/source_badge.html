@@ -1,0 +1,6 @@
+{% assign source = include.vm.source | default: "utm" %}
+{% if source == "utm" %}
+<span class="badge rounded-pill text-bg-primary" title="Built by the UTM gallery project">{{ include.vm.source_label | default: "UTM" }}</span>
+{% else %}
+<span class="badge rounded-pill text-bg-warning" title="Imported from the {{ include.vm.registry_org }} org on HCP Vagrant Registry">{{ include.vm.source_label | default: source }}</span>
+{% endif %}

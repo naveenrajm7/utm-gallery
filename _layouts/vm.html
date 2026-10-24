@@ -5,11 +5,15 @@ layout: default
 <div class="container my-4">
   <div class="row">
     <div class="col-md-6">
-      <h1>{{ page.name }}</h1>
+      <h1>{{ page.name }} {% include source_badge.html vm=page %}</h1>
       <div class="description">
         {{ page.description | markdownify }}
       </div>
       <ul class="list-unstyled">
+        <li class="d-flex justify-content-between">
+          <strong>Source:</strong>
+          <span><a href="https://portal.cloud.hashicorp.com/vagrant/discover/{{ page.box_ref | default: page.name }}">{{ page.box_ref | default: page.name }}</a></span>
+        </li>
         <li class="d-flex justify-content-between">
           <strong>Downloads:</strong>
           <span>{{ page.downloads }}</span>
@@ -39,11 +43,14 @@ layout: default
         <li class="my-3"></li> <!-- Space between existing and new items -->
 
 
-        <!-- User provided data-->
+        <!-- User provided data, null for boxes without a _data file -->
+        {% if page.display_name %}
         <li class="d-flex justify-content-between">
           <strong>Display:</strong>
           <span>{{ page.display_name }}</span>
         </li> 
+        {% endif %}
+        {% unless page.serial_port == nil %}
         <li class="d-flex justify-content-between">
           <strong>Serial port:</strong>
           <span>
@@ -54,7 +61,9 @@ layout: default
           {% endif %}
           </span>
         </li> 
+        {% endunless %}
 
+        {% if page.source == "utm" %}
         <!-- Hardcoded specs, common for all packer build VMs -->
         <li class="d-flex justify-content-between">
           <strong>Memory:</strong>
@@ -64,6 +73,7 @@ layout: default
           <strong>Disk:</strong>
           <span>40 GiB</span>
         </li>
+        {% endif %}
         <li class="d-flex justify-content-between">
           <strong>Username:</strong>
           <span>vagrant</span>
@@ -83,7 +93,7 @@ layout: default
       <div id="command-box" class="mt-3" style="display: none;">
         <p>Copy the command below, paste it into your terminal, and execute it:</p>
         <div class="input-group">
-          <input type="text" class="form-control" id="command-input" value="curl -sSf https://naveenrajm7.github.io/utm-gallery/getbox.sh | sh -s {{ page.name }} " wrap="off" style="overflow:auto">
+          <input type="text" class="form-control" id="command-input" value="curl -sSf https://naveenrajm7.github.io/utm-gallery/getbox.sh | sh -s {% if page.source == "utm" %}{{ page.name }}{% else %}{{ page.box_ref }} {{ page.latest_version }} {{ page.download_arch }}{% endif %} " wrap="off" style="overflow:auto">
           <button class="btn btn-outline-secondary" type="button" id="copy-btn">
             Copy  <img src="{{ '/assets/icons/copy.svg' | relative_url }}" alt="Copy Icon" class="icon" id="copy-icon">
           </button>

@@ -4,29 +4,37 @@
 layout: vm
 # API response data
 name: "fedora-41"
-downloads: 33
-description: 'Fedora-41 Server with GNOME'
+downloads: 625
+description: "Fedora-41 Server with GNOME"
 short_description: ""
-is_private: False
+is_private: false
 created_at: 2025-01-31T03:11:22.399354Z
 updated_at: 2025-01-31T09:38:56.170350Z
 versions_count: 1
 provider_names: "utm"
 latest_released_at: 2025-01-31T08:56:39.983976Z
 state: "AVAILABLE"
-description_html: '<p>Fedora-41 Server with GNOME</p>
-'
+description_html: "<p>Fedora-41 Server with GNOME</p>\n"
 versions: "[]"
 
 # API Response : Box details
+latest_version: "0.0.0"
 size: 1872.3897848129272
 architectures: "arm64"
+download_arch: "arm64"
+
+# Source registry
+source: "utm"
+source_label: "UTM"
+registry_org: "utm"
+box_ref: "utm/fedora-41"
+
 # Hardcoded data
 image_url: "assets/images/fedora-41.png"
 
-# User data
+# User data (null when no _data file exists)
 icon_url: "assets/images/icons/fedora.png"
 packer_builder: "iso"
 display_name: "GPU Accelerated"
-serial_port: True
+serial_port: true
 ---
