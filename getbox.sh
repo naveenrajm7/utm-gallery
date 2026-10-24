@@ -3,16 +3,18 @@
 
 # This script downloads and installs a VM box from the gallery.
 # It takes arguments: box_name (required), box_version (optional), box_arch (optional).
+# box_name may be prefixed with a registry org, e.g. bento/ubuntu-24.04 (defaults to utm).
 
 set -eu
 
 # Function to display usage
 usage() {
     cat <<EOF
-Usage: $0 <box_name> [box_version] [box_arch]
+Usage: $0 [org/]<box_name> [box_version] [box_arch]
 
 Arguments:
-  box_name      Name of the box (required)
+  box_name      Name of the box (required), optionally prefixed with the
+                registry org, e.g. bento/ubuntu-24.04 (org defaults to utm)
   box_version   Version of the box (optional, defaults to latest)
   box_arch      Architecture of the box (optional, defaults to arm)
 EOF
@@ -39,8 +41,9 @@ err() {
 
 # Function to fetch the latest version if not provided
 fetch_latest_version() {
-    local box_name=$1
-    local versions_api_url="https://api.cloud.hashicorp.com/vagrant/2022-09-30/registry/utm/box/$box_name/versions"
+    local box_org=$1
+    local box_name=$2
+    local versions_api_url="https://api.cloud.hashicorp.com/vagrant/2022-09-30/registry/$box_org/box/$box_name/versions"
     local response
     response=$(curl -sSf -w "%{http_code}" "$versions_api_url")
     local http_code=${response: -3}
@@ -100,7 +103,14 @@ main() {
         usage
     fi
 
+    local box_org=utm
     local box_name=$1
+    case "$box_name" in
+      */*)
+          box_org=${box_name%%/*}
+          box_name=${box_name#*/}
+          ;;
+    esac
     local box_version=${2:-}
     local box_arch=${3:-arm64}
 
@@ -108,16 +118,16 @@ main() {
     need_cmd tar
     need_cmd osascript
 
-    log "Starting the download process for box: $box_name, version: ${box_version:-latest}, architecture: $box_arch"
+    log "Starting the download process for box: $box_org/$box_name, version: ${box_version:-latest}, architecture: $box_arch"
 
     if [ -z "$box_version" ]; then
         log "Fetching the latest version for box: $box_name"
-        fetch_latest_version "$box_name" || return 1
+        fetch_latest_version "$box_org" "$box_name" || return 1
         box_version="$RETVAL"
         log "Latest version for box $box_name is $box_version"
     fi
 
-    local api_url="https://api.cloud.hashicorp.com/vagrant/2022-09-30/registry/utm/box/$box_name/version/$box_version/provider/utm/architecture/$box_arch/download"
+    local api_url="https://api.cloud.hashicorp.com/vagrant/2022-09-30/registry/$box_org/box/$box_name/version/$box_version/provider/utm/architecture/$box_arch/download"
     log "Fetching download details from API: $api_url"
     fetch_download_details "$api_url" || return 1
     local response="$RETVAL"
