@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "rockylinux-10"
-downloads: 1390
+downloads: 1393
 description: "Vanilla Rockylinux 10 Vagrant box created with Bento by Progress Chef. This box will be updated with the latest releases of Rockylinux 10 as they become available"
 short_description: "Vanilla Rockylinux 10 Vagrant box created with Bento by Progress Chef"
 is_private: false
