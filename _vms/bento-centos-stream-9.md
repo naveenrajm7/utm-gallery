@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "centos-stream-9"
-downloads: 8005
+downloads: 8008
 description: "Vanilla Centos stream 9 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Centos stream 9 Vagrant box created with Bento by Progress Chef"
 is_private: false
