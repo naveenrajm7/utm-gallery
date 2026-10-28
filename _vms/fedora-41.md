@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "fedora-41"
-downloads: 682
+downloads: 696
 description: "Fedora-41 Server with GNOME"
 short_description: ""
 is_private: false

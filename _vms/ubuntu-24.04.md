@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "ubuntu-24.04"
-downloads: 4037
+downloads: 4116
 description: "Ubuntu-24.04 Server ISO install"
 short_description: ""
 is_private: false

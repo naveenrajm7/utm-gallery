@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "almalinux-8.10"
-downloads: 352
+downloads: 356
 description: "Vanilla Almalinux 8.10 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Almalinux 8.10 Vagrant box created with Bento by Progress Chef"
 is_private: false
