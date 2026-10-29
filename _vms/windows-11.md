@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "windows-11"
-downloads: 5558
+downloads: 5925
 description: "Microsoft Windows 11 Pro.\nBuilt with [Packer](https://github.com/naveenrajm7/packer-plugin-utm)\nUsing the template from [Bento](https://github.com/naveenrajm7/utm-box)"
 short_description: ""
 is_private: false

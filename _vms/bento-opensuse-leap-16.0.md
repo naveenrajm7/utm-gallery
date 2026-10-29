@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "opensuse-leap-16.0"
-downloads: 80
+downloads: 81
 description: "Vanilla Opensuse leap 16.0 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Opensuse leap 16.0 Vagrant box created with Bento by Progress Chef"
 is_private: false
