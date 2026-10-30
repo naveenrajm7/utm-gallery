@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "freebsd-14.3"
-downloads: 310
+downloads: 311
 description: "Vanilla Freebsd 14.3 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Freebsd 14.3 Vagrant box created with Bento by Progress Chef"
 is_private: false

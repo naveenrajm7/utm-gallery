@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "fedora-latest"
-downloads: 19014
+downloads: 19027
 description: "Vanilla Fedora latest Vagrant box created with Bento by Progress Chef. This box will be updated with the latest releases of Fedora latest as they become available"
 short_description: "Vanilla Fedora latest Vagrant box created with Bento by Progress Chef"
 is_private: false

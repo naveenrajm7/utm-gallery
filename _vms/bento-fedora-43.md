@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "fedora-43"
-downloads: 427
+downloads: 430
 description: "Vanilla Fedora 43 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Fedora 43 Vagrant box created with Bento by Progress Chef"
 is_private: false
