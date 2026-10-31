@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "oraclelinux-10.0"
-downloads: 21
+downloads: 26
 description: "Vanilla Oraclelinux 10.0 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Oraclelinux 10.0 Vagrant box created with Bento by Progress Chef"
 is_private: false
