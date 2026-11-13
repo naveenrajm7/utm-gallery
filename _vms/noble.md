@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "noble"
-downloads: 454
+downloads: 507
 description: "Ubuntu 24.04 (Noble Numbat) Server Cloud Image.  "
 short_description: ""
 is_private: false
