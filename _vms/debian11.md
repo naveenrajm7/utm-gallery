@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "debian11"
-downloads: 629
+downloads: 641
 description: "Debian 11 (Xfce) from original UTM Gallery\n"
 short_description: ""
 is_private: false
