@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "alpine-ce"
-downloads: 2050
+downloads: 2078
 description: "Alpine Linux Cloud box"
 short_description: ""
 is_private: false
