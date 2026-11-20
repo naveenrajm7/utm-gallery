@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "debian-12"
-downloads: 1707
+downloads: 1730
 description: "Debian 12 with GNOME"
 short_description: ""
 is_private: false
