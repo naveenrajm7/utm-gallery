@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "ubuntu-24.04"
-downloads: 139115
+downloads: 139300
 description: "Vanilla Ubuntu 24.04 Vagrant box created with Bento by Progress Chef"
 short_description: "Vanilla Ubuntu 24.04 Vagrant box created with Bento by Progress Chef"
 is_private: false
