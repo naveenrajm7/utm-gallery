@@ -4,7 +4,7 @@
 layout: vm
 # API response data
 name: "fedora41-ce"
-downloads: 369
+downloads: 374
 description: "Fedora 41 Cloud Edition"
 short_description: ""
 is_private: false
